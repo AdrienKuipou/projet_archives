@@ -100,7 +100,7 @@ $retoure=$base->query('SELECT nom_user,prenom_user,libelle_service from connecte
  <div class="wrapper">
      <div class="header">
         <div class="header-menu">
-          <div class="title">IUG <span>ARCHIVES</span></div>
+          <div class="title">UTR <span>ARCHIVES</span></div>
           
             <div class="sidebar-btn">
                 <i class="fas fa-bars"><a href="accueil_admin.php" class="accueil"> Accueil</a></i>
@@ -111,7 +111,7 @@ $retoure=$base->query('SELECT nom_user,prenom_user,libelle_service from connecte
       <div class="sidebar">
         <div class="sidebar-menu">
            <center class="profile">
-             <img src='logo_iug.jpg'>
+             <img src='archives-logo-2.jpg'>
             <strong> <p> <?php echo $_SESSION['login'];?></p></strong>
            </center>
            <li class="item">

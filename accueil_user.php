@@ -6,13 +6,13 @@ if(!$_SESSION['mot_de_passe'])
     exit();
 }
 /* include("nombre_connectes.php");*/
+
 include("connecter_base.php");
 
-$idService = $_SESSION['s_service'];
+ $idService = $_SESSION['s_service'];
 $requeteS = $base->query("SELECT * FROM service WHERE id_service = $idService");
 $requeteS->execute();
-
- ?>
+$reponseS = $requeteS->fetch(); 
 ?>
 <html>
      <head>

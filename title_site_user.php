@@ -14,9 +14,8 @@
            <center class="profile">
              <img src='archives-logo-2.jpg'>
             <p> <?php echo $_SESSION['login'];?></p>
-            <br>
-            <p> <?php echo $requeteS['libelle_service'];?></p>
-           
+            
+            <p> <?php echo $reponseS['libelle_service'];?></p>           
            </center>
            
            <li class="item">

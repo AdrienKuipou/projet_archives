@@ -33,9 +33,13 @@ if(isset($_GET['id_dossier']) and $_GET['id_dossier'] !="" )
             echo '<script>window.location.href = "supprimer_dossier.php";</script>';
     		exit();
     } catch (PDOException $e) {
-          $message = "You can't delete it because this service is already associated with several users. ";
-        echo "<script>alert('$message');</script>";
+        $message = "You can't delete it because this folder is already associated with several documents. ";
+        $htmlErrorMessage = "<h1>Error occurred during deletion</h1>
+                            <p>$message</p>
+                            <a href='supprimer_dossier.php'><button style='background-color: #f44336; color: white; padding: 10px 20px; border: none; text-decoration: none; cursor: pointer; font-size: 16px; border-radius: 4px;'>Go Back</button></a>";
+        echo $htmlErrorMessage;
     }
 }
+
 
 ?>

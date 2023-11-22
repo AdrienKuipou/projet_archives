@@ -1,4 +1,4 @@
-<?php
+
 <div class="wrapper">
      <div class="header">
         <div class="header-menu">
@@ -50,4 +50,4 @@
         <center>
         </div>
  </div>
-?>
+

@@ -12,6 +12,10 @@ if(!$_SESSION['mot_de_passe'])
  $requete =$base->prepare("SELECT* FROM archive,naturedocument WHERE archive.id_naturedoc=naturedocument.id_naturedoc and id_service=:id_archive ");
  $requete -> execute (array(':id_archive'=> $_SESSION['s_service']));
 
+  $idService = $_SESSION['s_service'];
+$requeteS = $base->query("SELECT * FROM service WHERE id_service = $idService");
+$requeteS->execute();
+$reponseS = $requeteS->fetch(); 
  ?>
 <html>
      <head>
@@ -69,7 +73,7 @@ if(!$_SESSION['mot_de_passe'])
     
        if($count>=1)
        {
-                  echo '<hr><span style="font-size: 1.3em; text-align: left"><strong style="font-size: 1.5em; color: green;">'.$count.'</strong> <strong>résultat trouvé pour</strong> <strong style="color: black; font-size: 1.5em;">' .$cherche. '</strong></span></hr>';
+                  echo '<hr><div class="result" style="font-size: 1.3em; text-align: left;"><strong style="font-size: 1.5em; color: green;">'.$count.'</strong> <strong>résultat trouvé pour</strong> <strong style="color: black; font-size: 1.5em;">' .$cherche. '</strong></div></hr>';
                        ?>
                        
                          <div class="result">
@@ -117,12 +121,12 @@ if(!$_SESSION['mot_de_passe'])
                       } 
                       else
                       {
-                             echo '<hr><span style="font-size: 1.3em;"><strong style="font-size: 1.5em; color: red;">0</strong> <strong>résultat trouvé pour</strong> <strong style="color: black; font-size: 1.5em;">' .$cherche. '</strong></span></hr>';
+                             echo '<hr><div class="result" style="font-size: 1.3em; text-align: left;"><strong style="font-size: 1.5em; color: red;">0</strong> <strong>résultat trouvé pour</strong> <strong style="color: black; font-size: 1.5em;">' .$cherche. '</strong></div></hr>';
                                  ?>
                              <div class="result">
                          <div class="panel panel-primary"  style="width: 900px" >
                     
-                              <div class="panel-heading" style="font-size:1.4em">No result</div>
+                              <div class="panel-heading" style="font-size:1.4em; text-align: left">No result</div>
                              
                                   <div class="panel-body">
                                          <table class="table table-hover table-striped table-bordered">

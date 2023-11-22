@@ -46,9 +46,7 @@ if(!$_SESSION['mot_de_passe'])
              <a href="supprimer_user.php" class="btn btn-primary">Supprimer </a>
       </center>
             <legend><strong style="color: white;background-color: rgb(0,0,0);">Ajout d'un utilisateur</strong></legend> 
-            <?php
-               include('enregistrer_ajouter_user.php');
-            ?>
+            
          <div class="container"  >
                 <div class="panel panel-primary" >
                   <div class="panel-heading" >Remplir les champs </div>
@@ -146,7 +144,9 @@ if(!$_SESSION['mot_de_passe'])
                  
                               </div>
                    
-              
+               <?php
+               include('enregistrer_ajouter_user.php');
+            ?>              
                                
                                  
                                          
@@ -167,7 +167,7 @@ if(!$_SESSION['mot_de_passe'])
 <div class="wrapper">
      <div class="header">
         <div class="header-menu">
-          <div class="title">IUG <span>ARCHIVES</span></div>
+          <div class="title">UTR <span>ARCHIVES</span></div>
           
             <div class="sidebar-btn">
                 <i class="fas fa-bars"><a href="accueil_admin.php" class="accueil"> Accueil</a></i>
@@ -178,7 +178,7 @@ if(!$_SESSION['mot_de_passe'])
       <div class="sidebar">
         <div class="sidebar-menu">
            <center class="profile">
-             <img src='logo_iug.jpg'>
+             <img src='archives-logo-2.jpg'>
              <p> <?php echo $_SESSION['login'];?></p>
            </center>
            <li class="item">

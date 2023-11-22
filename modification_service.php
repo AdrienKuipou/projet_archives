@@ -97,7 +97,7 @@ if(isset($_POST['modifier']) and  !empty( $_POST['modifier']))
 <div class="wrapper">
      <div class="header">
         <div class="header-menu">
-          <div class="title">IUG <span>ARCHIVES</span></div>
+          <div class="title">UTR <span>ARCHIVES</span></div>
           
             <div class="sidebar-btn">
                 <i class="fas fa-bars"><a href="accueil_admin.php" class="accueil"> Accueil</a></i>
@@ -108,7 +108,7 @@ if(isset($_POST['modifier']) and  !empty( $_POST['modifier']))
       <div class="sidebar">
         <div class="sidebar-menu">
            <center class="profile">
-             <img src='logo_iug.jpg'>
+             <img src='archives-logo-2.jpg'>
              <p> <?php echo $_SESSION['login'];?></p>
            </center>
            <li class="item">
