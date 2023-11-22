@@ -16,8 +16,6 @@ include("enregistrer_archiver_doc.php");
       $requete_dos =$base-> query('SELECT* FROM dossier ');
       $requete_natdoc =$base-> query('SELECT* FROM naturedocument ');
 ?>
-
-     
 <html>
     <head>
         <title>archiver un document</title>
@@ -25,11 +23,8 @@ include("enregistrer_archiver_doc.php");
         <link rel="stylesheet" href="style_ajouter_user.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     </head>
-<body style="background-image:url(f.jpg)">
-      <?php 
-  include("title_site.php");
- ?>
-       <div class="contenaire_body" style="padding-top: 0;">
+<body style="background-image:url(f.jpg)" ">
+       <div class="contenaire_body" style=" padding-top: 0;">
        
             <center>
              <a href="archiver_doc.php" class="btn btn-primary">Archiver un document </a>
@@ -136,10 +131,13 @@ include("enregistrer_archiver_doc.php");
                        </div>
                          </div>
         
-  
+  <br>
 
            
-  
+      <?php 
+  include("title_site.php");
+ ?>
+       
       
 <script type="text/javascript">
  $(document).ready(function(){

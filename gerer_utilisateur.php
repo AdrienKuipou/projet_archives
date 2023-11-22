@@ -1,9 +1,10 @@
-
 <?php
 session_start();
 if(!$_SESSION['mot_de_passe'])
 {
-   header('location: index.php');
+   echo '<script>window.location.href = "index.php";</script>';
+    exit();
+
 }
 ?>
 <?php include("nombre_connectes.php");?>
@@ -67,7 +68,7 @@ if(!$_SESSION['mot_de_passe'])
                 <div class="panel panel-info margetop" style=" ">
                   <div class="panel-heading">Opération sur un utilisateur :</div>
                     <div class="panel-body" >
-                   
+             <a href="listuser.php" class="btn btn-primary">Liste </a><br><br>                   
              <a href="ajouter_user.php" class="btn btn-primary">Ajouter </a><br><br>
              <a href="modifier_user.php" class="btn btn-primary">Modifier </a><br><br>
              <a href="supprimer_user.php" class="btn btn-primary">Supprimer </a>

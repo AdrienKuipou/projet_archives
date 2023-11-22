@@ -1,12 +1,19 @@
-
 <?php
 session_start();
 if(!$_SESSION['mot_de_passe'])
 {
-   header('location: index.php');
+  echo '<script>window.location.href = "index.php";</script>';
+    exit();
 }
+/* include("nombre_connectes.php");*/
+include("connecter_base.php");
+
+$idService = $_SESSION['s_service'];
+$requeteS = $base->query("SELECT * FROM service WHERE id_service = $idService");
+$requeteS->execute();
+
+ ?>
 ?>
-<?php include("nombre_connectes.php");?>
 <html>
      <head>
          <title>consulter archive</title>
@@ -59,43 +66,9 @@ if(!$_SESSION['mot_de_passe'])
      </tr>
   </table>
        
- <div class="wrapper">
-     <div class="header">
-        <div class="header-menu">
-          <div class="title">IUG <span>ARCHIVES</span></div>
-          
-            <div class="sidebar-btn">
-                <i class="fas fa-bars"><a href="accueil_user.php" class="accueil"> Accueil</a></i>
-            </div>
-           <p class="aaa"  ><a href="deconnection.php" class="btn btn-primary" >DECONNEXION</a></p>
-        </div>
-     </div>
-      <div class="sidebar">
-        <div class="sidebar-menu">
-           <center class="profile">
-             <img src='logo_iug.jpg'>
-             <p> <?php echo $_SESSION['login'];?></p>
-           </center>
-           
-           <li class="item">
-              <a href="accueil_user.php" class="menu-btn">
-               <img src="logo_accueill.png" width="30px" height="30px">&nbsp<span>Accueil</span>
-              </a>
-           </li>
-           <li class="item" id="messages">
-              <a href="consulter_doc.php" class="menu-btn">
-               <img src="logo_consulter.png" width="30px" height="30px">&nbsp<span>Consulter document <i class="fas fa-chevron-down drop-down"></i></span>
-              </a>
-              
-           </li>
-         
-           
-           
-        </div>
-      </div>
-        <div class="main-container">
-        
-     
- </div>
+  <?php 
+  include("title_site_user.php");
+ ?>
+    
  </body>
 </html>

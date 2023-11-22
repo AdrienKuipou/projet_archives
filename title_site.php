@@ -1,25 +1,8 @@
 <?php
-session_start();
-if(!$_SESSION['mot_de_passe'])
-{
-   echo '<script>window.location.href = "index.php";</script>';
-    exit();
-
-}
-?>
-<html>
-    <head>
-        <title>gérer utilisateur</title>
-        <link rel="stylesheet" href="bootstrap.css">
-        <link rel="stylesheet" href="style_gerer_dossier.css">
-        
-        
-    </head>
-<body  style="background-image:url(doa.jpg)" >
 <div class="wrapper">
      <div class="header">
         <div class="header-menu">
-          <div class="title">IUG <span>ARCHIVES</span></div>
+          <div class="title">UTR <span>ARCHIVES</span></div>
           
             <div class="sidebar-btn">
                 <i class="fas fa-bars"><a href="accueil_admin.php" class="accueil"> Accueil</a></i>
@@ -30,7 +13,7 @@ if(!$_SESSION['mot_de_passe'])
       <div class="sidebar">
         <div class="sidebar-menu">
            <center class="profile">
-             <img src='logo_iug.jpg'>
+             <img src='archives-logo-2.jpg'>
              <p> <?php echo $_SESSION['login'];?></p>
            </center>
            <li class="item">
@@ -40,7 +23,7 @@ if(!$_SESSION['mot_de_passe'])
            </li>
            <li class="item" id="messages">
               <a href="gerer_utilisateur.php" class="menu-btn">
-               <i class="fas fa-envelope"></i><img src="logo_user.png" width="30px" height="30px">&nbsp<span>Gestion des utilisateurs <i class="fas fa-chevron-down drop-down"></i></span>
+                 <i class="fas fa-envelope"></i><img src="logo_user.png" width="30px" height="30px">&nbsp<span>Gestion des utilisateurs <i class="fas fa-chevron-down drop-down"></i></span>
               </a>
               
            </li>
@@ -59,25 +42,12 @@ if(!$_SESSION['mot_de_passe'])
            </li>
         </div>
       </div>
-        <div class="main-containerE">
+
+        <div class="main-container-ajoutuser">
         <br><br><br><br><br><br><br><br><br><br><br><br>
-        <center >
-        <div class="container" >
-                <div class="panel panel-primary" >
-                  <div class="panel-heading" >Opération sur un dossier :</div>
-                    <div class="panel-body" >
-                   
-             <a href="ajouter_dossier.php" class="btn btn-primary">Ajouter </a><br><br>
-             <a href="modifier_dossier.php" class="btn btn-primary">Modifier </a><br><br>
-             <a href="supprimer_dossier.php" class="btn btn-primary">Supprimer </a>
-                    </div>
-                     </div>
-                       </div>
-                         </div>
+        
+        
         <center>
         </div>
  </div>
-
-    
-</body>
-</html>
+?>

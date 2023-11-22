@@ -17,8 +17,10 @@ if(isset($_GET['id_archive']) and $_GET['id_archive'] !="" )
            {
              unlink($fichier);
            }
+          echo '<script>window.location.href = "supprimer_archive.php";</script>';
+    exit();
+
           
-           header('location:supprimer_archive.php');
 }
 
 ?>

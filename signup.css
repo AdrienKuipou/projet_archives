@@ -116,7 +116,7 @@ body {
   cursor: pointer;
   font-size: 1em;
   color: white  ;
-  background-color:blue ;
+  background-color:rgb(12, 205, 48) ;
   font-weight: bold;
   margin: 0 .9em .9em 0;
   
@@ -231,4 +231,3 @@ body {
   opacity: 0.8;
   filter: alpha(opacity = 80)
 }
-

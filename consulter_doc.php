@@ -1,9 +1,9 @@
-
 <?php
 session_start();
 if(!$_SESSION['mot_de_passe'])
 {
-  header('location: index.php');
+ echo '<script>window.location.href = "index.php";</script>';
+    exit();
 }
  include("connecter_base.php");
 ?>
@@ -69,13 +69,13 @@ if(!$_SESSION['mot_de_passe'])
     
        if($count>=1)
        {
-                   echo'<center><hr> <strong> '.$count.'</strong> résultat trouvé pour <strong>'.$cherche.'</strong></hr></center><br><br>';
+                  echo '<hr><span style="font-size: 1.3em; text-align: left"><strong style="font-size: 1.5em; color: green;">'.$count.'</strong> <strong>résultat trouvé pour</strong> <strong style="color: black; font-size: 1.5em;">' .$cherche. '</strong></span></hr>';
                        ?>
                        
                          <div class="result">
                          <div class="panel panel-primary"  style="width: 1000px" >
                     
-                              <div class="panel-heading" style="font-size:1.4em">Resultat</div>
+                              <div class="panel-heading" style="font-size:1.4em; text-align: left">Resultat</div>
                              
                                   <div class="panel-body">
                                       <table class="table table-hover table-striped table-bordered">
@@ -106,7 +106,7 @@ if(!$_SESSION['mot_de_passe'])
                                          
                                       </table>
                                  
-                                    </center>
+                                    
                                     
                                  </div>
                               </div>
@@ -117,9 +117,52 @@ if(!$_SESSION['mot_de_passe'])
                       } 
                       else
                       {
-                                 echo'<hr> <strong> 0</strong> résultat trouvé pour <strong>'.$cherche.'</strong></hr>';
+                             echo '<hr><span style="font-size: 1.3em;"><strong style="font-size: 1.5em; color: red;">0</strong> <strong>résultat trouvé pour</strong> <strong style="color: black; font-size: 1.5em;">' .$cherche. '</strong></span></hr>';
+                                 ?>
+                             <div class="result">
+                         <div class="panel panel-primary"  style="width: 900px" >
+                    
+                              <div class="panel-heading" style="font-size:1.4em">No result</div>
                              
-                      }
+                                  <div class="panel-body">
+                                         <table class="table table-hover table-striped table-bordered">
+                                          <thead>
+                                              <tr  class="panel panel-info">
+                                              <th >Document</th><th>Nom</th> <th >Date d'archivage</th><th>Date de création</th>
+                                                 <th>Nature du document</th>
+                                              </tr>
+                                          </thead>
+                                          
+                                          <tbody >
+                                        
+                                                       
+                                                         <tr class="panel panel-primary" >
+                                                             
+                                      
+                                                               <td ></td>
+                                                               <td ></td>
+                                                              <td > </td>
+                                                              <td ></td>
+                                                              <td ></td>
+                                                              
+                                                            
+                                                            
+                                                         </tr>
+                                               
+                                          </tbody>
+                                         
+                                      </table>
+                                 
+                                    
+                                    
+                                 </div>
+                              </div>
+                        </div>
+                       </div>
+                     </div>     
+                                 
+                             
+                      <?php } ?>
                       ?>
                <?php
                
@@ -163,7 +206,7 @@ if(!$_SESSION['mot_de_passe'])
                       
                    </table>
               
-                 </center>
+                 
              
               </div>
            </div>
@@ -177,47 +220,10 @@ if(!$_SESSION['mot_de_passe'])
       ?>
     
    
-        
- <div class="wrapper">
-     <div class="header">
-        <div class="header-menu">
-          <div class="title">IUG <span>ARCHIVES</span></div>
-          
-            <div class="sidebar-btn">
-                <i class="fas fa-bars"><a href="accueil_user.php" class="accueil"> Accueil</a></i>
-            </div>
-            <p class="aaa"  ><a href="deconnection.php" class="btn btn-primary" >DECONNEXION</a></p>
-        </div>
-     </div>
-      <div class="sidebar">
-        <div class="sidebar-menu">
-           <center class="profile">
-             <img src='logo_iug.jpg'>
-            <p> <?php echo $_SESSION['login'];?></p>
-           
-           </center>
-           
-           <li class="item">
-              <a href="accueil_user.php" class="menu-btn">
-               <img src="ho.png" width="30px" height="30px">&nbsp<span>Accueil</span>
-              </a>
-           </li>
-           <li class="item" id="messages">
-              <a href="consulter_doc.php" class="menu-btn">
-               <img src="loupe.png" width="30px" height="30px">&nbsp<span>Consulter document <i class="fas fa-chevron-down drop-down"></i></span>
-              </a>
-              
-           </li>
-         
-           
-           
-        </div>
-      </div>
-        <div class="main-container">
-        
-        </div>
-        
- </div>
+ <?php 
+  include("title_site_user.php");
+ ?>
+    
  </body>
 </html>
 

@@ -55,14 +55,14 @@ if(empty($error))
       
             $cf_mot_de_passe=$_POST['cf_mot_de_passe'];
         
-           $s_type_user=$_POST['s_type_user'];
+            $s_type_user=1;
             $autorisation="refused";
             $s_service=$_POST['s_service'];
            
                
 
                 
-                           $requete =$base->prepare('INSERT INTO utilisateur(nom_user,prenom_user,email,tel_user,poste_user,login_user,mot_de_passe,id_typeutilisateur,id_service,autorisation)
+                          $requete =$base->prepare('INSERT INTO utilisateur(nom_user,prenom_user,email,tel_user,poste_user,login_user,mot_de_passe,id_typeutilisateur,id_service,autorisation)
                                 VALUES(:nom_user,:prenom_user,:email,:telephone,:poste,:login_user,:cf_mot_de_passe,:s_type_user,:s_service,:autorisation)');
                         
                         $requete -> execute (array(':nom_user' =>$nom_user,
@@ -95,6 +95,6 @@ if(empty($error))
   
   
          </html>              
-         
-
-
+                     
+                                 
+                     

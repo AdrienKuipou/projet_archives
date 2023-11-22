@@ -19,18 +19,28 @@ if(!$_SESSION['mot_de_passe'])
         <link rel="stylesheet" href="style_ajouter_user.css">
         
         <style>
-.alert{
-  background:#4CCEE8;
-  width:550px;
-  height:80px;
-  border-radius:50px;
-  color:black;
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f5c6cb;
+}
+
+.alert ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.alert li {
+  list-style-type: disc;
 }
 </style>
     </head>
 <body style="background-image:url(u.jpg)">
        <div class="contenaire_body">
      <center>
+          <a href="listuser.php" class="btn btn-primary">Liste </a>
           <a href="ajouter_user.php" class="btn btn-primary">Ajouter </a>
              <a href="modifier_user.php" class="btn btn-primary">Modifier </a>
              <a href="supprimer_user.php" class="btn btn-primary">Supprimer </a>

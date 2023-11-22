@@ -23,12 +23,19 @@
  ?>
 <?php
 if(isset($_GET['id_dossier']) and $_GET['id_dossier'] !="" )
-{
-           $requete = $base ->prepare('DELETE  FROM dossier WHERE id_dossier=:id');
+{   
+    		try {
+        $requete = $base ->prepare('DELETE  FROM dossier WHERE id_dossier=:id');
            $requete -> execute(array(':id'=>$_GET['id_dossier']));
            deleteTree($reponse['nom_dossier']);
-           rmdir('tata');
-           header('location:supprimer_dossier.php');
+	   /*           rmdir('tata'); */
+          
+            echo '<script>window.location.href = "supprimer_dossier.php";</script>';
+    		exit();
+    } catch (PDOException $e) {
+          $message = "You can't delete it because this service is already associated with several users. ";
+        echo "<script>alert('$message');</script>";
+    }
 }
 
 ?>

@@ -2,7 +2,9 @@
 session_start();
 if(!$_SESSION['mot_de_passe'])
 {
-   header('location: index.php');
+   echo '<script>window.location.href = "index.php";</script>';
+    exit();
+
 }
 
 ?>
@@ -23,7 +25,7 @@ if(isset($_POST['modifier']) and  !empty( $_POST['modifier']))
            $nom=$_POST['nom'];
            $description=$_POST['description'];
        
-           $requete = $base -> prepare('UPDATE dossier SET nom_dossier=:nom_dossier,description=:description WHERE id_service=:id ');
+           $requete = $base -> prepare('UPDATE dossier SET nom_dossier=:nom_dossier,description=:description WHERE id_dossier=:id ');
            $requete -> execute(array(':nom_dossier'=>$nom,':description'=> $description, ':id'=>$_GET['id_dossier'] ));
            echo'<script>  confirm("le dossier à été modifier avec succès"); </script>';
 }

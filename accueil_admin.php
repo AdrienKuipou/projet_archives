@@ -1,16 +1,16 @@
-
 <?php
 session_start();
 if(!$_SESSION['mot_de_passe'])
 {
-   header('location: index.php');
+   echo '<script>window.location.href = "index.php";</script>';
+    exit();
 }
 ?>
   
-  <?php include("nombre_connectes.php");
+  <?php  include("nombre_connectes.php");
 
 $retoure=$base->query('SELECT nom_user,prenom_user,libelle_service from connectes,utilisateur,service WHERE utilisateur.id_user=connectes.id_user and utilisateur.id_service=service.id_service');
-
+   
 ?>
 <html>
      <head>
